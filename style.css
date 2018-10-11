@@ -1,0 +1,7 @@
+.btn-custom{
+    background-color: lightpink;
+    border: 1px solid lightpink;
+}
+#canvas{
+    display:none;
+}
