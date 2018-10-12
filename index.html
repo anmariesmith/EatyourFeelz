@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>EatYourFeelz</title>
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -13,51 +14,50 @@
 
 <body>
 
+
   <div class="jumbotron bg-dark">
-    <h1 class="display-4 text-light">Food Vibes</h1>
-    <p class="lead text-light">Ever in a mood, but not sure what you're in the mood for? </p>
-    <hr class="my-4 text-light">
-    <p class="text-light">Use this app to tell you the best meal for your mood.</p>
-    <a class="btn btn-primary btn-lg btn-custom text-dark" href="#" role="button">Help me nomz</a>
+    <h1 class="display-4 text-light text-center">Food Vibes</h1>
+    <p class="lead text-light text-center">Ever in a mood, but not sure what you're in the mood for? </p>
+    <p class="text-light text-center">Use this app to tell you the best meal for your mood.</p>
   </div>
 
-  <div class="container">
-    <div class="row input-group mb-3">
-      <div class="col-md-12 ml-4 camera"> 
-        <video loop muted autoplay id="video">Video stream not available.</video>
-        <div class="row">
-          <button class="col-md-4" id="startbutton">Take a Pic</button>
-        </div>
-      </div>
-      <canvas id="canvas">
-      </canvas>
-      <div class="row">
-        <div class="col-md-12 output">
-          <img id="photo" alt="The screen capture will appear in this box.">
-        </div>
+  <div class="container border">
+
+    <div class="row input-group ml-3 mt-3 mb-3">
+
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 camera">
+        <video loop muted autoplay class="col-md-6" id="video">Video stream not available.</video>
       </div>
 
-      <!-- <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                          <label class="custom-file-label" for="inputGroupFile01">Show us your a pic</label>
-                        </div> -->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center">
+        <div id="photoBox">
+        <img id="photo" alt="The screen capture will appear in this box." style="">
+        <canvas id="canvas" width="auto" height="auto">
+        </canvas>
+        </div>
+      </div>
+
     </div>
 
-    <h1>Your face tells us you're:</h1>
-
-    <div class = "recipes">
-      
+    <div class="row">
+      <button class="col-md-6" id="startbutton">Take a Pic</button>
+      <button class="col-md-6" id="sendButton">New Food</button>
     </div>
+
+    <div class="row">
+      <h1 class="col-md-12">Your face tells us you're:</h1>
+
+    </div>
+
+
+
 
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="usercamera.js"></script>
+  <script src="faceSearch.js"></script>
   <script src="getRecipeAPI.js"></script>
-
-
 </body>
 
 </html>
