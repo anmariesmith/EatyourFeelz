@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body background="food.png">
 
 
     <div class="jumbotron bg-dark">
@@ -22,7 +22,7 @@
     </div>
 
     <div class="container">
-            <div class="row border justify-content-center">
+            <div class="row justify-content-center pt-2 pb-3">
             <div class="col-md-4">
                 <div class="card">
                     <video loop muted autoplay class="card-img-top" id="video">Video stream not available.</video>
@@ -46,54 +46,57 @@
             </div>
         </div>
 
-        <div class="row border p-3 mt-2">
+        <div class="row border p-3 mt-2 bg-light mb-4">
             <h2>Based off your face, we can tell youre:</h2>
+            <p class="feelingsBox"></p>
             <hr>
             <h3>Before we render the suggested receipes, do you want to filter the results?</h3>
-
-            <div class="input-group mb-3">
+        <div class="row col-md-12 justify-content-center">
+            <div class="input-group mb-3 col-md-4">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
                     <input type="checkbox" aria-label="checkbox" data-filter="balanced">
                   </div><h5 class="p-2">balanced</h5>
                 </div>
               </div>
-              <div class="input-group mb-3">
+              <div class="input-group mb-3 col-md-4">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       <input type="checkbox" aria-label="checkbox"data-filter="high-protein">
                     </div><h5 class="p-2">high protein</h5>
                   </div>
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3 col-md-4">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <input type="checkbox" aria-label="checkbox"data-filter="high-fiber">
                       </div><h5 class="p-2">high fiber</h5>
                     </div>
                   </div>
-                  <div class="input-group mb-3">
+                  </div>
+                  <div class="row col-md-12 justify-content-center">
+                  <div class="input-group mb-3 col-md-4">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <input type="checkbox" aria-label="checkbox"data-filter="low-fat">
                         </div><h5 class="p-2">low fat</h5>
                       </div>
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3 col-md-4">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
                             <input type="checkbox" aria-label="checkbox"data-filter="low-carb">
                           </div><h5 class="p-2">low carb</h5>
                         </div>
                       </div>
-                      <div class="input-group mb-3">
+                      <div class="input-group mb-3 col-md-4">
                           <div class="input-group-prepend">
                             <div class="input-group-text">
                               <input type="checkbox" aria-label="checkbox"data-filter="low-carb">
                             </div><h5 class="p-2">low sodium</h5>
                           </div>
                         </div>
-  
+                  </div>
 
 
 
