@@ -1,8 +1,11 @@
+$(document).ready(function (){
+
+
 const getAllStock = function () {
 
     // Need input from face++ to determine what food type to search for in Edamam
-    const foodType = '';
-    const url = 'https://api.edamam.com/search';
+    const foodType = 'salmon,kale';
+    let url = 'https://api.edamam.com/search';
 
     url += '?' + $.param({
         'q': foodType,
@@ -17,6 +20,14 @@ const getAllStock = function () {
     }).then(function (response) {
         console.log(response);
 
+        console.log(url);
+
 
     });
+
 };
+
+
+getAllStock();
+
+});
