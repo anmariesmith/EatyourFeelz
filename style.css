@@ -8,11 +8,12 @@
 
 #video{
     max-width:100%;
+    height: auto;
 }
 
-#photoBox{
-    display:flex;
-    width: 100%;
+
+#photo{
+    display: flex;
     justify-content: center;
 }
 
