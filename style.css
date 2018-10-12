@@ -10,9 +10,11 @@
     max-width:100%;
 }
 
-#photoBox{
-    display:flex;
-    width: 100%;
+
+#photo{
+    width: 350px;
+    height: 240px;
+    display: flex;
     justify-content: center;
 }
 

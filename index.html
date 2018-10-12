@@ -22,27 +22,48 @@
   </div>
 
   <div class="container border">
-
-    <div class="row input-group ml-3 mt-3 mb-3">
-
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 camera">
-        <video loop muted autoplay class="col-md-6" id="video">Video stream not available.</video>
-      </div>
-
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center">
-        <div id="photoBox">
-        <img id="photo" alt="The screen capture will appear in this box." style="">
-        <canvas id="canvas" width="auto" height="auto">
-        </canvas>
+    <div class="row">
+      <div class="col-md-6">
+    <div class="card" style="width: 18rem;">
+        <video loop muted autoplay class="card-img-top col-md-12" id="video" style="width:18rem;">Video stream not available.</video>
+        <div class="card-body">
+          <h5 class="card-title">Take a selfie!</h5>
+          <p class="card-text">Click the button below to capture your current mood.</p>
+          <button class="btn col-md-12" id="startbutton">Take a Pic</button>
         </div>
       </div>
+      </div>
+      <div class="col-md-6">
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" id="photo" alt="The screen capture will appear in this box."style="width: 18rem;" width="auto" height="320px">
+          <canvas id="canvas" width="auto" height="auto">
+          </canvas>
+          <div class="card-body">
+            <h5 class="card-title">Image Captured</h5>
+            <p class="card-text">Click the button below to see what mood you're in.</p>
+            <button class="btn col-md-12 mt-3" id="sendButton">Show me my vibe</button>
+          </div>
+        </div>
+        </div>
+</div>
 
-    </div>
+    <!-- <div class="row input-group ml-3  mt-3 mb-3">
 
-    <div class="row">
-      <button class="col-md-6" id="startbutton">Take a Pic</button>
-      <button class="col-md-6" id="sendButton">New Food</button>
-    </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 camera">
+        <video loop muted autoplay class="col-md-12" id="video">Video stream not available.</video>
+        <button class="btn col-md-12" id="startbutton">Take a Pic</button>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+      
+        <img class="col-md-12" id="photo" alt="The screen capture will appear in this box." style="height:320px">
+        <canvas id="canvas" width="auto" height="auto">
+        </canvas>
+        <button class="btn col-md-12 mt-3" id="sendButton">New Food</button>
+        </div>
+
+    </div> -->
+
 
     <div class="row">
       <h1 class="col-md-12">Your face tells us you're:</h1>
