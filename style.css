@@ -6,3 +6,16 @@
     display:none;
 }
 
+#video{
+    max-width:100%;
+}
+
+#photoBox{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.camera{
+    padding:0;
+}
