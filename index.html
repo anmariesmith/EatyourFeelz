@@ -21,68 +21,84 @@
         <p class="text-light text-center">Use this app to tell you the best meal for your mood.</p>
     </div>
 
-    <div class="container border">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card" style="width: 18rem;">
-                    <video loop muted autoplay class="card-img-top col-md-12" id="video" style="width:18rem;">Video
-                        stream not available.</video>
+    <div class="container">
+            <div class="row border justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <video loop muted autoplay class="card-img-top" id="video">Video stream not available.</video>
                     <div class="card-body">
                         <h5 class="card-title">Take a selfie!</h5>
                         <p class="card-text">Click the button below to capture your current mood.</p>
-                        <button class="btn col-md-12" id="startbutton">Take a Pic</button>
+                        <button class="btn mt-3" id="startbutton">Take a Pic</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" id="photo" alt="The screen capture will appear in this box." style="width: 18rem;">
-                    <canvas id="canvas" width="auto" height="auto">
-                    </canvas>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" id="photo" alt="The screen capture will appear in this box." src="https://via.placeholder.com/347x260">
+                    <canvas class="card-img-top" id="canvas" width="auto" height="auto"></canvas>
                     <div class="card-body">
                         <h5 class="card-title">Image Captured</h5>
                         <p class="card-text">Click the button below to see what mood you're in.</p>
-                        <button class="btn col-md-12 mt-3" id="sendButton">Show me my vibe</button>
+                        <button class="btn mt-3" id="sendButton">Show me my vibe</button>
                     </div>
                 </div>
             </div>
         </div>
 
-=======
-    <div class="jumbotron bg-dark">
-        <h1 class="display-4 text-light text-center">Food Vibes</h1>
-        <p class="lead text-light text-center">Ever in a mood, but not sure what you're in the mood for? </p>
-        <p class="text-light text-center">Use this app to tell you the best meal for your mood.</p>
-    </div>
+        <div class="row border p-3 mt-2">
+            <h2>Based off your face, we can tell youre:</h2>
+            <hr>
+            <h3>Before we render the suggested receipes, do you want to filter the results?</h3>
 
-    <div class="container border">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card" style="width: 18rem;">
-                    <video loop muted autoplay class="card-img-top col-md-12" id="video" style="width:18rem;">Video
-                        stream not available.</video>
-                    <div class="card-body">
-                        <h5 class="card-title">Take a selfie!</h5>
-                        <p class="card-text">Click the button below to capture your current mood.</p>
-                        <button class="btn col-md-12" id="startbutton">Take a Pic</button>
-                    </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" aria-label="checkbox" data-filter="balanced">
+                  </div><h5 class="p-2">balanced</h5>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" id="photo" alt="The screen capture will appear in this box." style="width: 18rem;">
-                    <canvas id="canvas" width="auto" height="auto">
-                    </canvas>
-                    <div class="card-body">
-                        <h5 class="card-title">Image Captured</h5>
-                        <p class="card-text">Click the button below to see what mood you're in.</p>
-                        <button class="btn col-md-12 mt-3" id="sendButton">Show me my vibe</button>
-                    </div>
+              </div>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox" aria-label="checkbox"data-filter="high-protein">
+                    </div><h5 class="p-2">high protein</h5>
+                  </div>
                 </div>
-            </div>
-        </div>
->>>>>>> b5e4a3ce779ccda78ce1ff909e24932544e19545
-    </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="checkbox"data-filter="high-fiber">
+                      </div><h5 class="p-2">high fiber</h5>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <input type="checkbox" aria-label="checkbox"data-filter="low-fat">
+                        </div><h5 class="p-2">low fat</h5>
+                      </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox" aria-label="checkbox"data-filter="low-carb">
+                          </div><h5 class="p-2">low carb</h5>
+                        </div>
+                      </div>
+                      <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <input type="checkbox" aria-label="checkbox"data-filter="low-carb">
+                            </div><h5 class="p-2">low sodium</h5>
+                          </div>
+                        </div>
+  
+
+
+
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
