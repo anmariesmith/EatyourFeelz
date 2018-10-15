@@ -1,13 +1,3 @@
-const emotionsList = {
-  anger: 30,
-  disgust: 1000,
-  fear: 10,
-  happiness: 20,
-  neutral: 60,
-  sadness: 0,
-  surprise: 0,
-};
-
 const keywords = {
   anger: ["peanut", "cashew", "fruit", "kale", "berry", "apple", "green tea", "matcha", "crunchy", "egg", "whole grain", "crunchy",],
   disgust: ["soup", "garlic", "honey", "ginger", "spicy", "rice", "banana", "yogurt", "herbal", "tea", "lemon", "orange", "citrus",],
@@ -19,11 +9,10 @@ const keywords = {
 };
 
 
-const termList =[];
+let termList =[];
 function findKeywords(emotionsList) {
+  termList = [];
   const originalList = Object.values(emotionsList);
-
-  console.log(emotionsList);
 
   const listVals = Object.values(emotionsList);
   const listKeys = Object.keys(emotionsList);
