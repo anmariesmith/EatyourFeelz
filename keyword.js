@@ -42,5 +42,9 @@ function findKeywords(emotionsList) {
   const termList =[]
   termList.push(firstTerm, secondTerm);
 
+  const feelingsBox = $(".feelingsBox");
+  feelingsBox.empty();
+  feelingsBox.append(`${firstMax}% ${firstKey} and ${secondMax}% ${secondKey}`);
+
   console.log(termList);
 }
