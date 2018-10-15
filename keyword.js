@@ -1,30 +1,20 @@
-const emotionsList = {
-  anger: 30,
-  disgust: 1000,
-  fear: 10,
-  happiness: 20,
-  neutral: 60,
-  sadness: 0,
-  surprise: 0,
-};
-
 const keywords = {
-  anger: ["peanut", "cashew", "fruit", "kale", "berry", "apple", "green tea", "matcha", "crunchy", "egg", "whole-grain", "crunchy",],
+  anger: ["peanut", "cashew", "fruit", "green", "berry", "apple", "green tea", "matcha", "crunchy", "egg", "whole-grain", "crunchy",],
   disgust: ["soup", "garlic", "honey", "ginger", "spicy", "rice", "banana", "yogurt", "herbal", "tea", "lemon", "orange", "citrus",],
   fear: ["dark-chocolate", "salmon", "berry", "pasta", "bread", "rice", "soup", "tea", "walnut",],
-  happiness: ["chewy", "tangy", "spicy", "hot", "savory", "sweet", "baked", "fried", "stir-fried", "roasated", "grilled", "creamy",],
-  neutral: ["american", "chinese", "french", "greek", "italian", "indian", "japanese", "korean", "mediterranean", "mexican", "thai",],
+  happiness: ["american", "chinese", "french", "greek", "italian", "indian", "japanese", "korean", "mediterranean", "mexican", "thai",],
+  neutral: ["chewy", "tangy", "spicy", "hot", "savory", "sweet", "baked", "fried", "stir-fried", "roasted", "grilled", "creamy",],
   sadness: ["cream", "cheese", "soup", "fish", "dessert", "bread", "pasta", "comfort", "bacon", "fried", "nuts", "pizza", "cheesy"],
-  surprise: ["uni", "acai", "bonito", "fish-sauce", "cherry", "steak", "potato", "okra", "vodka", "bourbon", "anchovy", "espresso", "vinegar", "pickle-juice", "rose-petal", "molasses", "miso", "XO-sauce",],
+  surprise: ["lamb", "bean", "noodle", "bonito", "fish-sauce", "cherry", "steak", "potato", "okra", "vodka", "bourbon", "anchovy", "espresso", "vinegar", "pickle-juice", "rose-petal", "molasses", "miso",],
 };
 
+let firstKey = "";
+let secondKey = "";
 
-let termList =[];
 function findKeywords(emotionsList) {
   const originalList = Object.values(emotionsList);
-  termList= [];
-
-  console.log(emotionsList);
+  firstKey= "";
+  secondKey=""
 
   const listVals = Object.values(emotionsList);
   const listKeys = Object.keys(emotionsList);
@@ -36,17 +26,12 @@ function findKeywords(emotionsList) {
   const secondMax = Math.max(...listVals);
   const index2 = originalList.indexOf(secondMax);
 
-  const firstKey = listKeys[index1];
-  const secondKey = listKeys[index2];
-
-  const firstTerm = keywords[firstKey][Math.floor((Math.random() * keywords[firstKey].length))];
-  const secondTerm = keywords[secondKey][Math.floor((Math.random() * keywords[secondKey].length))];
-
-  termList.push(firstTerm, secondTerm);
+  firstKey = listKeys[index1];
+  secondKey = listKeys[index2];
 
   const feelingsBox = $(".feelingsBox");
   feelingsBox.empty();
   feelingsBox.append(` ${firstMax}% ${firstKey} and ${secondMax}% ${secondKey}`);
 
-  console.log(termList);
+  console.log(`${firstKey}, ${secondKey}`);
 }

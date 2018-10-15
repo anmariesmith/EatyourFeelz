@@ -58,7 +58,10 @@ const getRecipe = function (url) {
 };
 
 const checkBoxes = function () {
-    const foodType = `${termList[0]}, ${termList[1]}`;
+    const firstTerm = keywords[firstKey][Math.floor((Math.random() * keywords[firstKey].length))];
+    const secondTerm = keywords[secondKey][Math.floor((Math.random() * keywords[secondKey].length))];
+  
+    const foodType = `${firstTerm}, ${secondTerm}`;
     let url = 'https://api.edamam.com/search';
     $('.resultsRender').removeClass('hide');
     let recipeParam = {
