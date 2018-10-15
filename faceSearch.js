@@ -1,3 +1,9 @@
+$(document).ajaxStart(function(){
+  $("#wait").css("display", "block");
+});
+$(document).ajaxComplete(function(){
+  $("#wait").css("display", "none");
+});
 $("#sendButton").on("click", faceSearch);
 function faceSearch() {
   const imgFace = $("img").attr("src");

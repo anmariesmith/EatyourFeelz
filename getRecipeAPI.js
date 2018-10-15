@@ -60,7 +60,7 @@ const getRecipe = function (url) {
 const checkBoxes = function () {
     const foodType = `${termList[0]}, ${termList[1]}`;
     let url = 'https://api.edamam.com/search';
-    $('.resultsRender').removeClass('hide');
+
     let recipeParam = {
         'q': foodType,
         // test using commas to delimit other searches or &q=
@@ -113,7 +113,12 @@ const checkBoxes = function () {
     // };
 
 // }
-
+$(document).ajaxStart(function(){
+    $("#wait").css("display", "block");
+  });
+  $(document).ajaxComplete(function(){
+    $("#wait").css("display", "none");
+  });
 $("#recipeCallButton").on('click', checkBoxes)
 
 });
