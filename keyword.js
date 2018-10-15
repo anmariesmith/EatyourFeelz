@@ -1,40 +1,46 @@
-const testList ={
-  happy: 30,
-  sad: 1000,
-  neutral: 10,
-  angry:20,
-  surprised: 60,
+const emotionsList = {
+  anger: 30,
+  disgust: 1000,
+  fear: 10,
+  happiness: 20,
+  neutral: 60,
+  sadness: 0,
+  surprise: 0,
 };
 
 const keywords = {
-  sad: [
-  "ice cream",
-  "cheeseburger",
-  "tacos",
-  "french fries",
-   "pie"
-  ],
-  surprised:[
-   "uni",
-   "corn chowder",
-   "nothing",
-  ],
+  anger: ["peanut", "cashew", "fruit", "kale", "berry", "apple", "green tea", "matcha", "crunchy", "egg", "whole grain", "crunchy",],
+  disgust: ["soup", "garlic", "honey", "ginger", "spicy", "rice", "banana", "yogurt", "herbal", "tea", "lemon", "orange", "citrus",],
+  fear: ["dark chocolate", "salmon", "berry", "pasta", "bread", "rice", "soup", "tea", "walnut",],
+  happiness: ["chewy", "tangy", "spicy", "hot", "savory", "sweet", "baked", "fried", "stir-fried", "roasated", "grilled", "creamy",],
+  neutral: ["american", "chinese", "french", "greek", "italian", "indian", "japanese", "korean", "mediterranean", "mexican", "thai",],
+  sadness: ["cream", "cheese", "soup", "fish", "dessert", "bread", "pasta", "comfort", "bacon", "fried", "nuts", "pizza", "cheesy"],
+  surprise: ["uni", "acai", "bonito", "fish sauce", "elver", "fatback", "jicama", "okra", "vodka", "konjac", "anchovy", "espresso", "vinegar", "pickle juice", "rose petal", "molasses", "miso", "XO sauce",],
 };
 
-const originalList=Object.values(testList);
+function findKeywords(emotionsList) {
+  const originalList = Object.values(emotionsList);
 
-const listNums = Object.values(testList);
-const listVals = Object.keys(testList);
+  console.log(emotionsList);
 
-const firstMax = Math.max(...listNums);
-const index1 = listNums.indexOf(firstMax);
-listNums.splice(index1, 1);
+  const listVals = Object.values(emotionsList);
+  const listKeys = Object.keys(emotionsList);
 
-const secondMax = Math.max(...listNums);
-const index2 = originalList.indexOf(secondMax);
+  const firstMax = Math.max(...listVals);
+  const index1 = listVals.indexOf(firstMax);
+  listVals.splice(index1, 1);
 
-const firstTerm = listVals[index1];
-const secondTerm = listVals[index2];
+  const secondMax = Math.max(...listVals);
+  const index2 = originalList.indexOf(secondMax);
 
-console.log(keywords[firstTerm][Math.floor((Math.random() * keywords[firstTerm].length))]);
-console.log(keywords[secondTerm][Math.floor((Math.random() * keywords[secondTerm].length))]);
+  const firstKey = listKeys[index1];
+  const secondKey = listKeys[index2];
+
+  const firstTerm = keywords[firstKey][Math.floor((Math.random() * keywords[firstKey].length))];
+  const secondTerm = keywords[secondKey][Math.floor((Math.random() * keywords[secondKey].length))];
+
+  const termList =[]
+  termList.push(firstTerm, secondTerm);
+
+  console.log(termList);
+}

@@ -17,6 +17,7 @@ function faceSearch() {
       image_base64: imgFace
     } 
   }).then(function(response) {
-    console.log(response.faces[0].attributes);
+    const emotionsList = response.faces[0].attributes.emotion;
+    findKeywords(emotionsList);
   });
 }
