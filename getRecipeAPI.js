@@ -75,7 +75,7 @@ const checkBoxes = function () {
 
     $('input:checked').each(function(){
 
-        url += '&diet='+$(this).val();
+        url += $(this).val();
         allcheckBoxes.push($(this).val());
     });
 
