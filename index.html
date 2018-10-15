@@ -2,105 +2,139 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>EatYourFeelz</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EatYourFeelz</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body background="food.png">
 
 
-    <div class="jumbotron bg-dark">
-        <h1 class="display-4 text-light text-center">Food Vibes</h1>
-        <p class="lead text-light text-center">Ever in a mood, but not sure what you're in the mood for? </p>
-        <p class="text-light text-center">Use this app to tell you the best meal for your mood.</p>
+  <div class="jumbotron bg-dark">
+    <h1 class="display-4 text-light text-center">Welcome to EatYourFeelz</h1>
+    <p class="lead text-light text-center">Ever in a mood, but not sure what you're in the mood for? </p>
+    <p class="text-light text-center">Use this app to tell you the best meal for your mood.</p>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center pt-2 pb-3">
+      <div class="col-md-4">
+        <div class="card">
+          <video loop muted autoplay class="card-img-top" id="video">Video stream not available.</video>
+          <div class="card-body text-center">
+            <h5 class="card-title">Take a selfie!</h5>
+            <p class="card-text">Click the button below to capture your current mood.</p>
+            <button class="btn mt-3 border" id="startbutton">Take a Pic</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" id="photo" alt="The screen capture will appear in this box." src="https://via.placeholder.com/347x260">
+          <canvas class="card-img-top" id="canvas" width="auto" height="auto"></canvas>
+          <div class="card-body text-center">
+            <h5 class="card-title">Image Captured</h5>
+            <p class="card-text">Click the button below to see what mood you're in.</p>
+            <button class="btn mt-3 border" id="sendButton">Show me my vibe</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="container">
-            <div class="row justify-content-center pt-2 pb-3">
-            <div class="col-md-4">
-                <div class="card">
-                    <video loop muted autoplay class="card-img-top" id="video">Video stream not available.</video>
-                    <div class="card-body">
-                        <h5 class="card-title">Take a selfie!</h5>
-                        <p class="card-text">Click the button below to capture your current mood.</p>
-                        <button class="btn mt-3" id="startbutton">Take a Pic</button>
-                    </div>
-                </div>
+    <div class="row border p-3 mt-2 bg-light mb-4 justify-content-center">
+      <h2>Based off your face, we can tell youre:</h2>
+      <p class="feelingsBox"></p>
+      <hr>
+      <h3>Before we render the suggested receipes, do you want to filter the results?</h3>
+      <div class="row col-md-12 justify-content-center">
+        <div class="input-group mb-3 col-md-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" aria-label="checkbox" data-filter="balanced">
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" id="photo" alt="The screen capture will appear in this box." src="https://via.placeholder.com/347x260">
-                    <canvas class="card-img-top" id="canvas" width="auto" height="auto"></canvas>
-                    <div class="card-body">
-                        <h5 class="card-title">Image Captured</h5>
-                        <p class="card-text">Click the button below to see what mood you're in.</p>
-                        <button class="btn mt-3" id="sendButton">Show me my vibe</button>
-                    </div>
-                </div>
-            </div>
+            <h5 class="p-2">balanced</h5>
+          </div>
         </div>
+        <div class="input-group mb-3 col-md-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" aria-label="checkbox" data-filter="high-protein">
+            </div>
+            <h5 class="p-2">high protein</h5>
+          </div>
+        </div>
+        <div class="input-group mb-3 col-md-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" aria-label="checkbox" data-filter="high-fiber">
+            </div>
+            <h5 class="p-2">high fiber</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row col-md-12 justify-content-center">
+        <div class="input-group mb-3 col-md-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" aria-label="checkbox" data-filter="low-fat">
+            </div>
+            <h5 class="p-2">low fat</h5>
+          </div>
+        </div>
+        <div class="input-group mb-3 col-md-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" aria-label="checkbox" data-filter="low-carb">
+            </div>
+            <h5 class="p-2">low carb</h5>
+          </div>
+        </div>
+        <div class="input-group mb-3 col-md-4">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" aria-label="checkbox" data-filter="low-carb">
+            </div>
+            <h5 class="p-2">low sodium</h5>
+          </div>
+        </div>
+      </div>
+      <div class="justify-content-center">
+        <button type="button" class="border btn btn-light">I'm ready to see my receipes</button>
+      </div>
+    </div>
 
-        <div class="row border p-3 mt-2 bg-light mb-4">
-            <h2>Based off your face, we can tell youre:</h2>
-            <p class="feelingsBox"></p>
-            <hr>
-            <h3>Before we render the suggested receipes, do you want to filter the results?</h3>
-        <div class="row col-md-12 justify-content-center">
-            <div class="input-group mb-3 col-md-4">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">
-                    <input type="checkbox" aria-label="checkbox" data-filter="balanced">
-                  </div><h5 class="p-2">balanced</h5>
-                </div>
-              </div>
-              <div class="input-group mb-3 col-md-4">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <input type="checkbox" aria-label="checkbox"data-filter="high-protein">
-                    </div><h5 class="p-2">high protein</h5>
-                  </div>
-                </div>
-                <div class="input-group mb-3 col-md-4">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <input type="checkbox" aria-label="checkbox"data-filter="high-fiber">
-                      </div><h5 class="p-2">high fiber</h5>
-                    </div>
-                  </div>
-                  </div>
-                  <div class="row col-md-12 justify-content-center">
-                  <div class="input-group mb-3 col-md-4">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <input type="checkbox" aria-label="checkbox"data-filter="low-fat">
-                        </div><h5 class="p-2">low fat</h5>
-                      </div>
-                    </div>
-                    <div class="input-group mb-3 col-md-4">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" aria-label="checkbox"data-filter="low-carb">
-                          </div><h5 class="p-2">low carb</h5>
-                        </div>
-                      </div>
-                      <div class="input-group mb-3 col-md-4">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text">
-                              <input type="checkbox" aria-label="checkbox"data-filter="low-carb">
-                            </div><h5 class="p-2">low sodium</h5>
-                          </div>
-                        </div>
-                  </div>
+    <div class="row border p-3 mt-2 bg-light justify-content-center" id="recipeBox">
+      <h2> Your Results:</h2>
+      <a href="#">
+      <div class="col-md-12 border mr-4">
+          <div class="recipeEach">
+            <img class="float-left mr-2 mt-3 border" src="foodimageplaceholder.jpeg" alt="food-pic" width="150px">
+            <h3 class="text-left pt-3"> Lorem Ipsum</h3>
+            <p class="text-left pt-1">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+              doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+              beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+              fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
+              quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+              eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+              veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+              consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+              consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </div>
+      </div>
+      </a>
+    </div>
 
-
-
-
+    <div class="row">
+      <footer class="footer mt-3 bg-dark" id="centerFooter">
+        <div class="container footer1">
+          <span>Copyright ©</span>
+        </div>
+      </footer>
 
 
 
