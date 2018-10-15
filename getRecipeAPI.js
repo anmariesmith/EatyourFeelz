@@ -28,19 +28,21 @@ const getRecipe = function (url) {
         console.log(response);
 
         let recipeList = response.hits;
+        $('#recipeBox').empty();
 
-        $('recipeBox').empty();
 
         for (let i = 0; i<recipeList.length; i++) {
 
             let calories = Math.round(recipeList[i].recipe.calories);
-            $('#recipeBox').append(`<a href="${recipeList[i].recipe.url}" target=_blank>
-            <div class="col-md-12 border mr-4">
+            $('#recipeBox').append(`
+            <div class="col-md-12 border  mt-3 ml-4 mr-4">
+            <a href="${recipeList[i].recipe.url}" target=_blank>
                 <div class="recipeEach">
-                  <img class="float-left mr-2 mt-3 border" src="${recipeList[i].recipe.image}" alt="food-pic" width="150px">
+                  <img class="float-left mr-2 mt-3 mb-3 border" src="${recipeList[i].recipe.image}" alt="food-pic" width="150px">
                   <h3 class="text-left pt-3"> ${recipeList[i].recipe.label}</h3>
                   <p class="text-left pt-1">Calories: ${calories}</p>
-                  <p class="text-left pt-1">Number of Ingredients: ${recipeList[i].recipe.ingredients.length}</p>`)
+                  <p class="text-left pt-1">Number of Ingredients: ${recipeList[i].recipe.ingredients.length}</p>
+                  </div></div>`) 
         };
         console.log(recipeList);
 
@@ -56,9 +58,12 @@ const getRecipe = function (url) {
 };
 
 const checkBoxes = function () {
-    const foodType = `${termList[0]}, ${termList[1]}`;
+    const firstTerm = keywords[firstKey][Math.floor((Math.random() * keywords[firstKey].length))];
+    const secondTerm = keywords[secondKey][Math.floor((Math.random() * keywords[secondKey].length))];
+  
+    const foodType = `${firstTerm}, ${secondTerm}`;
     let url = 'https://api.edamam.com/search';
-    
+    $('.resultsRender').removeClass('hide');
     let recipeParam = {
         'q': foodType,
         // test using commas to delimit other searches or &q=

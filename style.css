@@ -73,3 +73,7 @@ a:hover{
       margin-left: 5px;
       color: #fbc565;
   }
+
+  .hide {
+      display:none;
+  }
