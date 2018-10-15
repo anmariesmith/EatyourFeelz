@@ -18,6 +18,8 @@ const keywords = {
   surprise: ["uni", "acai", "bonito", "fish sauce", "elver", "fatback", "jicama", "okra", "vodka", "konjac", "anchovy", "espresso", "vinegar", "pickle juice", "rose petal", "molasses", "miso", "XO sauce",],
 };
 
+
+const termList =[];
 function findKeywords(emotionsList) {
   const originalList = Object.values(emotionsList);
 
@@ -39,7 +41,6 @@ function findKeywords(emotionsList) {
   const firstTerm = keywords[firstKey][Math.floor((Math.random() * keywords[firstKey].length))];
   const secondTerm = keywords[secondKey][Math.floor((Math.random() * keywords[secondKey].length))];
 
-  const termList =[]
   termList.push(firstTerm, secondTerm);
 
   const feelingsBox = $(".feelingsBox");

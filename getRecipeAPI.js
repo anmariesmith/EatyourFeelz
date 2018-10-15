@@ -27,13 +27,38 @@ const getRecipe = function (url) {
     }).then(function (response) {
         console.log(response);
 
+        let recipeList = response.hits;
+
+        $('recipeBox').empty();
+
+        for (let i = 0; i<recipeList.length; i++) {
+
+            let calories = Math.round(recipeList[i].recipe.calories);
+            $('#recipeBox').append(`<a href="${recipeList[i].recipe.url}" target=_blank>
+            <div class="col-md-12 border mr-4">
+                <div class="recipeEach">
+                  <img class="float-left mr-2 mt-3 border" src="${recipeList[i].recipe.image}" alt="food-pic" width="150px">
+                  <h3 class="text-left pt-3"> ${recipeList[i].recipe.label}</h3>
+                  <p class="text-left pt-1">Calories: ${calories}</p>
+                  <p class="text-left pt-1">Number of Ingredients: ${recipeList[i].recipe.ingredients.length}</p>`)
+        };
+        console.log(recipeList);
+
+
+        
+
+
+
+        $()
+
     });
 
 };
 
 const checkBoxes = function () {
-    const foodType = 'chicken';
+    const foodType = `${termList[0]}, ${termList[1]}`;
     let url = 'https://api.edamam.com/search';
+    
     let recipeParam = {
         'q': foodType,
         // test using commas to delimit other searches or &q=
