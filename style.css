@@ -77,3 +77,12 @@ a:hover{
   .hide {
       display:none;
   }
+
+  #wait {
+      text-align: center;
+  }
+
+.loading{
+    background-color:white;
+    font-size: 24px;
+}
