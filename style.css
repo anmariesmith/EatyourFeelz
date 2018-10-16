@@ -87,7 +87,7 @@ a:hover{
     font-size: 24px;
 }
 
-.links {
-    vertical-align: baseline;
+#links {
+    vertical-align: sub;
 }
 
