@@ -20,7 +20,7 @@ const getRecipe = function (url) {
     // url += '?' + $.param(
     // recipeParam
     // );
-
+    
     $.ajax({
         url: url,
         method: 'GET'
@@ -60,8 +60,10 @@ const getRecipe = function (url) {
 const checkBoxes = function () {
     const firstTerm = keywords[firstKey][Math.floor((Math.random() * keywords[firstKey].length))];
     const secondTerm = keywords[secondKey][Math.floor((Math.random() * keywords[secondKey].length))];
+    let proteinPref = document.getElementById('proteinList').value;
+    console.log(proteinPref);
   
-    const foodType = `${firstTerm}, ${secondTerm}`;
+    const foodType = `${firstTerm}, ${secondTerm}, ${proteinPref}`;
     let url = 'https://api.edamam.com/search';
 
     let recipeParam = {
