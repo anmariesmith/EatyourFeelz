@@ -31,7 +31,7 @@ const getRecipe = function (url) {
         $('#recipeBox').empty();
 
 
-        for (let i = 0; i<recipeList.length; i++) {
+        for (let i = 0; i<9; i++) {
 
             let calories = Math.round(recipeList[i].recipe.calories);
             $('#recipeBox').append(`
@@ -70,7 +70,9 @@ const checkBoxes = function () {
         'q': foodType,
         // test using commas to delimit other searches or &q=
         'app_id': '3284ef04',
-        'app_key': 'f092529967b25342d06a5afe00576fdd'
+        'app_key': 'f092529967b25342d06a5afe00576fdd',
+        'from': '0',
+        'to': '100'
     }
     url += '?' + $.param(
         recipeParam
