@@ -15,11 +15,33 @@
 
 <body background="food.png">
 
-
-  <div class="jumbotron bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-light" href="index.html">EatyourFeelz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="contact.html">Contact</a>
+                </li>
+    
+            </ul>
+        </div>
+    </nav>
+  <div class="jumbotron-fluid p-5 bg-dark">
+   <div class="container">
     <h1 class="display-4 text-light text-center">Welcome to EatYourFeelz</h1>
     <p class="lead text-light text-center">Ever in a mood, but not sure what you're in the mood for? </p>
     <p class="text-light text-center">Use this app to tell you the best meal for your mood.</p>
+  </div>
   </div>
 
   <div class="container">
@@ -47,21 +69,8 @@
       </div>
     </div>
     <div class="row border p-3 mt-2 bg-light mb-4 justify-content-center">
-        <h3>Pick a Protein</h3>
-        <select id=proteinList>
-            <option value="">Surprise Me</option>
-            <option value="beef">Beef</option>
-            <option value="pork">Pork</option>
-            <option value="chicken">Chicken</option>
-            <option value="fish">Fish</option>
-            <option value="tofu">Tofu</option>
-            <option value="lentil">Bean Stuffs</option>
-
-          </select>
-    </div>
-    <div class="row border p-3 mt-2 bg-light mb-4 justify-content-center">
-      <h2>Based off your face, we can tell you're: </h2>
-      <h2 class="feelingsBox"></h2>
+      <h2 class="col-md-12 d-flex justify-content-center">Based off your face, we can tell you're feeling: </h2>
+      <h2 class="row col-md-12 feelingsBox d-flex justify-content-center"></h2>
       <hr>
       <h3>Before we render the suggested receipes, do you want to filter the results?</h3>
       <div class="row col-md-12 justify-content-center">
@@ -92,7 +101,20 @@
           </div>
         </div>
       </div>
-      <div class="justify-content-center">
+      <div class="row p-3 mt-2 bg-light mb-4 justify-content-center">
+          <h4>Pick a Protein: &nbsp;  </h4>
+          <select id=proteinList>
+              <option value="">Surprise Me</option>
+              <option value="beef">Beef</option>
+              <option value="pork">Pork</option>
+              <option value="chicken">Chicken</option>
+              <option value="fish">Fish</option>
+              <option value="tofu">Tofu</option>
+              <option value="lentil">Bean Stuffs</option>
+  
+            </select>
+      </div>
+      <div class="row col-md-12 justify-content-center">
         <button type="button" class="border btn btn-light" id="recipeCallButton">Show me teh foodz</button>
       </div>
     </div>
