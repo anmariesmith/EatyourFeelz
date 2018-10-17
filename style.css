@@ -88,6 +88,28 @@ a:hover{
 }
 
 #links {
-    vertical-align: sub;
+    position: absolute;
+    bottom: 0;
+    line-height:1.5;
 }
 
+h6 {
+    line-height: 1.0;
+    margin-top:0;
+    margin-bottom: 20px;
+}
+
+.name-title{
+    margin-top: 10px;
+    line-height:1;
+}
+
+p{
+    line-height: 1.5;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.card-body{
+    padding:0;
+}
