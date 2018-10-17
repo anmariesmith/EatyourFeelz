@@ -110,6 +110,10 @@ p{
     text-align: center;
 }
 
+#startbutton, #sendButton {
+   margin-bottom: 20px;
+}
+
 .card-body{
     padding:0;
 }
