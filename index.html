@@ -15,33 +15,41 @@
 
 <body background="./images/food.png">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand text-light" href="index.html">EatyourFeelz</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link text-light" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="contact.html">Contact</a>
-                </li>
-    
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand text-light" href="index.html">EatyourFeelz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link text-light" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
   <div class="jumbotron-fluid p-5 bg-dark">
+<<<<<<< HEAD
    <div class="container">
     <h1 class="display-4 text-light text-center">Welcome to EatYourFeelz</h1>
     <p class="lead text-light text-center">Ever want to eat, but you're not sure what? </p>
     <p class="text-light text-center">Well this is the app that fits a food to your mood.</p>
   </div>
+=======
+    <div class="container">
+      <h1 class="display-4 text-light text-center">Welcome to EatYourFeelz</h1>
+      <p class="lead text-light text-center">Ever in a mood, but not sure what you're in the mood for? </p>
+      <p class="text-light text-center">Use this app to tell you the best meal for your mood.</p>
+    </div>
+>>>>>>> 8d9c30a356121f46cb4c9774dda8c24bdad4af49
   </div>
 
   <div class="container">
@@ -85,9 +93,9 @@
         <div class="input-group mb-3 col-md-4">
           <div class="input-group-prepend">
             <div class="input-group-text">
-              <input type="checkbox" aria-label="checkbox" data-filter="high-protein" value='&diet=high-protein'>
+              <input type="checkbox" aria-label="checkbox" data-filter="high-protein" value='&diet=balanced'>
             </div>
-            <h5 class="p-2">High-Protein</h5>
+            <h5 class="p-2">Balanced</h5>
           </div>
         </div>
         <div class="input-group mb-3 col-md-4">
@@ -102,36 +110,41 @@
         </div>
       </div>
       <div class="row p-3 mt-2 bg-light mb-4 justify-content-center">
-          <h4>Pick a Protein: &nbsp;  </h4>
-          <select id=proteinList>
-              <option value="">Surprise Me</option>
-              <option value="beef">Beef</option>
-              <option value="pork">Pork</option>
-              <option value="chicken">Chicken</option>
-              <option value="fish">Fish</option>
-              <option value="tofu">Tofu</option>
-              <option value="lentil">Bean Stuffs</option>
-  
-            </select>
+        <h4>Pick a Protein: &nbsp; </h4>
+        <select id=proteinList>
+          <option value="">Surprise Me</option>
+          <option value="beef">Beef</option>
+          <option value="pork">Pork</option>
+          <option value="chicken">Chicken</option>
+          <option value="fish">Fish</option>
+          <option value="tofu">Tofu</option>
+          <option value="lentil">Bean Stuffs</option>
+
+        </select>
       </div>
       <div class="row col-md-12 justify-content-center">
         <button type="button" class="border btn btn-light" id="recipeCallButton">Show me teh foodz</button>
       </div>
     </div>
 
-    <div  id="resultsRender">
+    <div id="resultsRender">
       <h2> Your Results:</h2>
       <div class="row border p-3 mt-2 bg-light justify-content-center" id="recipeBox">
 
+      </div>
     </div>
-    </div>
 
 
   </div>
   </div>
   </div>
 
-  <div id="wait" style="display:none;width:200px;height:200px; position:fixed;top:40%;left:40%;padding:2px;"><img src='https://media.giphy.com/media/3o7bu8sRnYpTOG1p8k/giphy.gif' width="200" height="200" /><p class="loading">Loading...</p></div>
+
+
+  <div id="wait" style="display:none;width:200px;height:200px; position:fixed;top:40%;left:40%;padding:2px;"><img src='https://media.giphy.com/media/3o7bu8sRnYpTOG1p8k/giphy.gif'
+      width="200" height="200" />
+    <p class="loading">Loading...</p>
+  </div>
 
   <div class="row">
     <footer class="footer mt-3 bg-dark" id="centerFooter">
@@ -140,9 +153,29 @@
       </div>
     </footer>
 
+    <div class="modal fade" id="alertModal">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Try Again!</h5>
+            <button type=button class="confirmButton" data-dismiss="modal"><span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-align">
+            <p>You have selected too many options. Be less picky!</p>
+          </div>
+          <div class='modal-footer'>
+            <button type="button" class='btn btn-secondary confirmButton' data-dismiss="modal">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="usercamera.js"></script>
     <script src="faceSearch.js"></script>
     <script src="getRecipeAPI.js"></script>

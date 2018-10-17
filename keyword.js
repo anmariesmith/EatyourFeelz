@@ -34,4 +34,4 @@ function findKeywords(emotionsList) {
   feelingsBox.append(` ${firstMax}% ${firstKey} and ${secondMax}% ${secondKey}`);
 
   console.log(`${firstKey}, ${secondKey}`);
-}
+};
