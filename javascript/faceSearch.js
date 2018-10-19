@@ -1,9 +1,11 @@
+//Loading Icon
 $(document).ajaxStart(function(){
   $("#wait").css("display", "block");
 });
 $(document).ajaxComplete(function(){
   $("#wait").css("display", "none");
 });
+
 $("#sendButton").on("click", faceSearch);
 function faceSearch() {
   const imgFace = $("img").attr("src");
@@ -16,6 +18,7 @@ function faceSearch() {
   const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
   const url = `${corsAnywhere}https://api-us.faceplusplus.com/facepp/v3/detect?${params}`;
 
+  //Sends the photo to Face++ in base64 form: the string is too long, so it has to be converted to data form.
   $.ajax({
     url: url,
     method: "POST",

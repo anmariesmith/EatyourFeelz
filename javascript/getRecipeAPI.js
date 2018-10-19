@@ -1,66 +1,38 @@
 $(document).ready(function () {
 
-    // figure out way to parse in data 
-
-
-
     const getRecipe = function (url) {
-
-        // // Need input from face++ to determine what food type to search for in Edamam
-        // const foodType = 'all';
-        // let url = 'https://api.edamam.com/search';
-        // let recipeParam = {
-        //     'q': foodType,
-        //     // test using commas to delimit other searches or &q=
-        //     'app_id': '3284ef04',
-        //     'app_key': 'f092529967b25342d06a5afe00576fdd',
-        //     // create a function that takes in exlcusion(s) to be added to the parameters above
-        // }
-
-        // url += '?' + $.param(
-        // recipeParam
-        // );
 
         $.ajax({
             url: url,
             method: 'GET'
         }).then(function (response) {
-            console.log(response);
 
             let recipeList = response.hits;
-            console.log(recipeList);
             $('#recipeBox').empty();
             if (recipeList.length === 0) {
                 $('#alertModal').modal('show');
             }
             else {
-
-
-
                 for (let i = 0; i < 9; i++) {
-
                     let calories = Math.round(recipeList[i].recipe.calories);
                     $('#recipeBox').append(`
-            <div class="col-md-12 border  mt-3 ml-4 mr-4">
-            <a href="${recipeList[i].recipe.url}" target=_blank>
-                <div class="recipeEach">
-                  <img class="float-left mr-2 mt-3 mb-3 border" src="${recipeList[i].recipe.image}" alt="food-pic" width="150px">
-                  <h3 class="text-left pt-3"> ${recipeList[i].recipe.label}</h3>
-                  <p class="text-left pt-1">Calories: ${calories}</p>
-                  <p class="text-left pt-1">Number of Ingredients: ${recipeList[i].recipe.ingredients.length}</p>
-                  </div></div>`)
+                        <div class="col-md-12 border  mt-3 ml-4 mr-4">
+                        <a href="${recipeList[i].recipe.url}" target=_blank>
+                        <div class="recipeEach">
+                        <img class="float-left mr-2 mt-3 mb-3 border" src="${recipeList[i].recipe.image}" alt="food-pic" width="150px">
+                        <h3 class="text-left pt-3"> ${recipeList[i].recipe.label}</h3>
+                        <p class="text-left pt-1">Calories: ${calories}</p>
+                        <p class="text-left pt-1">Number of Ingredients: ${recipeList[i].recipe.ingredients.length}</p>
+                        </div></div>`)
                 };
-                console.log(recipeList);
             }
         });
-
     };
 
     const checkBoxes = function () {
         let firstTerm = keywords[firstKey][Math.floor((Math.random() * keywords[firstKey].length))];
         let secondTerm = keywords[secondKey][Math.floor((Math.random() * keywords[secondKey].length))];
         let proteinPref = $('#proteinList').val();
-        console.log(proteinPref);
 
         let foodType = '';
         if (proteinPref !== '') {
@@ -74,7 +46,6 @@ $(document).ready(function () {
 
         let recipeParam = {
             'q': foodType,
-            // test using commas to delimit other searches or &q=
             'app_id': '3284ef04',
             'app_key': 'f092529967b25342d06a5afe00576fdd',
             'from': '0',
@@ -92,15 +63,12 @@ $(document).ready(function () {
             allcheckBoxes.push($(this).val());
         });
 
-        console.log(url);
-        console.log(allcheckBoxes);
         getRecipe(url);
 
     };
 
-
-    // const checkBoxes = function () {
-
+//ADDITIONAL OPTIONS IN THE CHECKBOX FUNCTION:
+//If the Edamam API resolves its technical issues, we can start running them.
 
     // if ($('#balanced').prop('checked') === true) {
     //     recipeParam.diet = 'balanced';
@@ -126,6 +94,7 @@ $(document).ready(function () {
     // };
 
     // }
+
     $(document).ajaxStart(function () {
         $("#wait").css("display", "block");
     });
