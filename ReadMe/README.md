@@ -2,6 +2,10 @@
 SUMMARY: 
 This app uses the Face++ API to glean emotions from a photo of the user's face, converts those emotions into keywords relating to foods, and runs a search through the Edamam API to recommend recipes for the User.
 
+LINKS:
+Github Repo: https://github.com/anmariesmith/EatyourFeelz/
+Github Pages: https://anmariesmith.github.io/EatyourFeelz/
+
 USER EXPERIENCE: 
 Though the process should be completely intuitive, this file documents the steps a user would follow to utilize this app:
 1. Give the app access to the computer/phone's camera.
